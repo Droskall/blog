@@ -1,0 +1,37 @@
+#menu{
+    background-color: #d7d7d7;
+    width: 95%;
+    margin: 1rem auto;
+    box-shadow: black 0 0 4px 2px;
+    border-radius: 30px;
+}
+
+#menu ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu ul li{
+    margin: 1rem 0;
+}
+
+#menu ul li h1{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: black;
+}
+
+#menu ul li a{
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #ef4d4d;
+    transition: 0.2s background-color linear;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+#menu ul li a:hover{
+    background-color: rgb(209, 210, 219);
+}

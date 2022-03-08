@@ -1,6 +1,7 @@
 <?php
 
 //Basic security function
+
 function sanitize($data): string
 {
     $data = trim($data);

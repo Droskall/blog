@@ -47,7 +47,7 @@ class UserManager {
                 ->setUsername($name)
                 ->setAdmin(0);
 
-            $request = $this->db->prepare("INSERT INTO user (username, password) VALUES (:name, :pass)");
+            $request = $this->db->prepare("INSERT INTO user (username, password, admin) VALUES (:name, :pass, 0)");
             $request->bindValue(":name", $name);
             $request->bindValue(":pass", $pass);
             $request->execute();
@@ -65,8 +65,8 @@ class UserManager {
     public function getUser($name, $pass){
         $request = $this->db->prepare("SELECT * FROM user WHERE username = :name");
         $request->bindValue(":name", $name);
-        if($request->execute() && $select = $request->fetch()){
-            if(password_verify($pass, $select["password"])){
+        if ($request->execute() && $select = $request->fetch()){
+            if (password_verify($pass, $select["password"])){
                 $user = new User();
                 $user
                     ->setId($select["id"])

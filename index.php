@@ -1,5 +1,5 @@
-
 <?php
+
 //We include all mandatory files.
 require_once './assets/parts/include.php';
 require_once './Controller/ArticleController.php';
@@ -38,6 +38,7 @@ if(isset($_GET['controller'])) {
                     $controller->articles();
                 }
                 break;
+
             default:
                 //We display a 404 not found page. Because the controller does not exist !
                 http_response_code(404);
@@ -53,11 +54,11 @@ if(isset($_GET['controller'])) {
 }
 else {
     //Show articles
-    if(isset($_SESSION["user"]) && !is_string($_SESSION["user"])){
+    if (isset($_SESSION["user"]) && !is_string($_SESSION["user"])){
         header("Location: index.php?controller=articles");
     }
     //Displays the login page
-    else{
+    else {
         $controller = new UserController();
         $controller->connexionPage();
     }
